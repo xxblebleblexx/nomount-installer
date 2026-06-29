@@ -1,4 +1,4 @@
-## Integration :
+## Integration (auto patch) :
 ```
 curl -LSs "https://raw.githubusercontent.com/xxblebleblexx/nomount-installer/refs/heads/installer/nomount.sh" | bash -s (kernel version)
 ```
