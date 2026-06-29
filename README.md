@@ -2,6 +2,7 @@
 ```
 curl -LSs "https://raw.githubusercontent.com/xxblebleblexx/nomount-installer/refs/heads/installer/nomount.sh" | bash -s (kernel version)
 ```
+kernel version = 4.9 | 4.14 | 4.19 | 5.4 |5.10| 5.15 | 6.1 | 6.6 | 6.12 | 6.18
 ### example :
 ```
 curl -LSs "https://raw.githubusercontent.com/xxblebleblexx/nomount-installer/refs/heads/installer/nomount.sh" | bash -s 4.19
