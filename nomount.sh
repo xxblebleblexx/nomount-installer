@@ -4,7 +4,7 @@ SUPPORTED_VERSIONS=(4.9 4.14 4.19 5.4 5.10 5.15 6.1 6.6 6.12 6.18)
 
 # check
 if [ ! -f Makefile ]; then
-    echo "Error: Makefile not found. Run this script from the kernel source root." >&2
+    echo "Error: Makefile not found. Run this script kernel source dir" >&2
     exit 1
 fi
 
