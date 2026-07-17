@@ -1,5 +1,16 @@
 #!/bin/bash
 KERNEL_VERSION="$1"
+#check
+if [ ! -f Makefile ]; then
+    echo "Error: Makefile not found. Run this script from the kernel source root." >&2
+    exit 1
+fi
+
+if [ -z "$KERNEL_VERSION" ]; then
+    echo "Error: Please specify the kernel version." >&2
+    echo "Example usage: curl -LSs \"https://raw.githubusercontent.com/xxblebleblexx/nomount-installer/refs/heads/installer/nomount.sh\" | bash -s 4.19" >&2
+    exit 1
+fi
 
 git clone -b master --depth=1 https://github.com/maxsteeel/nomount.git;wait
 cp nomount/kernel/src/nomount.c fs/
