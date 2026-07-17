@@ -1,6 +1,8 @@
 #!/bin/bash
 KERNEL_VERSION="$1"
-#check
+SUPPORTED_VERSIONS=(4.9 4.14 4.19 5.4 5.10 5.15 6.1 6.6 6.12 6.18)
+
+# check
 if [ ! -f Makefile ]; then
     echo "Error: Makefile not found. Run this script from the kernel source root." >&2
     exit 1
@@ -12,6 +14,13 @@ if [ -z "$KERNEL_VERSION" ]; then
     exit 1
 fi
 
+if [[ ! " ${SUPPORTED_VERSIONS[*]} " =~ " ${KERNEL_VERSION} " ]]; then
+    echo "Error: Kernel version $KERNEL_VERSION is not supported." >&2
+    echo "Supported versions are: ${SUPPORTED_VERSIONS[*]}" >&2
+    exit 1
+fi
+
+# main code
 git clone -b master --depth=1 https://github.com/maxsteeel/nomount.git;wait
 cp nomount/kernel/src/nomount.c fs/
 cp nomount/kernel/src/nomount.h fs/
