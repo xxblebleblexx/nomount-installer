@@ -21,7 +21,7 @@ if [[ ! " ${SUPPORTED_VERSIONS[*]} " =~ " ${KERNEL_VERSION} " ]]; then
 fi
 
 # main code
-git clone -b master --depth=1 https://github.com/maxsteeel/nomount.git;wait
+git clone -b dev --depth=1 https://github.com/maxsteeel/nomount.git;wait
 cp nomount/kernel/src/nomount.c fs/
 cp nomount/kernel/src/nomount.h fs/
 
