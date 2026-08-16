@@ -22,8 +22,11 @@ fi
 
 # main code
 git clone -b dev --depth=1 https://github.com/maxsteeel/nomount.git;wait
-cp nomount/kernel/src/nomount.c fs/
-cp nomount/kernel/src/nomount.h fs/
+mkdir -p fs/nomount
+cp nomount/kernel/src/Kconfig fs/nomount
+cp nomount/kernel/src/Makefile fs/nomount
+cp nomount/kernel/src/nomount.c fs/nomount
+cp nomount/kernel/src/nomount.h fs/nomount
 
 if [ "$KERNEL_VERSION" = "4.9" ]; then
 cp nomount/kernel/patches/nomount_${KERNEL_VERSION}_kernel_integration.patch .
